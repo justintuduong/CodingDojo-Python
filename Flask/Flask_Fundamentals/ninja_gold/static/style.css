@@ -1,0 +1,32 @@
+.inline-block {
+    display: inline-block;
+}
+.gold {
+    padding:5px;
+    min-width: 250px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.gold_action {
+    margin-left:2vw;
+    border: solid black 3px;
+    width:22vw;
+    height: 22vw;
+    display:inline-block;
+    text-align:center;
+}
+.gold_action h1, button,p {
+    margin-top:3vw;
+}
+
+textarea {
+    width: 95vw;
+    margin-left:2vw;
+    border: solid black 3px;
+}
+
+body p {
+    margin-left:2vw;
+}
+

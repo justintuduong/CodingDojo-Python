@@ -1,0 +1,16 @@
+body {
+    width: 100vw;
+    height: 100vw; 
+}
+
+.color1 {
+    background-color:red;
+    width:3vw;
+    height:3vw;
+}
+
+.color2 {
+    background-color:black;
+    width: 3vw;
+    height:3vw;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        body {
+            text-align:center;
+            width:100vw;
+            height:100vw;
+            background-color: lightblue;
+        }
+
+        div h1 {
+            padding-top:100px;
+        }
+        div {
+            background-color: lightblue;
+            text-align:center;
+            padding-bottom:100px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h1>Counter</h1>
+        <p>{{ count }}</p>
+        <div>
+            <a href="http://localhost:5000/addtwo"><button class="btn btn-primary" type="submit" >Add two visits!</button></a>
+            <a href="http://localhost:5000/reset"><button class="btn btn-primary" type="submit">Reset</button></a>
+            <a href="http://localhost:5000/destroy_session"><button class="btn btn-primary" >Destroy!</button></a>
+        </div>
+    </div>
+</body>
+</html>

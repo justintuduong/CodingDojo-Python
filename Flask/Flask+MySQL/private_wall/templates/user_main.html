@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="p-5 border border-dark rounded-lg container-fluid">
+        <h1 class="d-inline text-primary">Coding Dojo</h1>
+        <div class="float-right pt-2">
+            <h3 class="d-inline pr-4 text-primary">Welcome, name</h3>           <!-- Jinja statement needed on "name" -->
+            <a href="http://localhost:5000/user/logout"><button class="btn btn-outline-primary d-inline float-right ">Logout</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 pt-lg-5 mr-1 pr-1 border-right">
+            <div class="align-center d-inline ml-lg-5 pl-lg-5">
+                <h2 class="border-bottom d-inline ">3 Message(s) for You</h2>
+            </div>
+            <p class="ml-lg-5 pl-lg-5">3 unread messages <br><br></p>           <!-- Jinja statement needed on "3" -->
+            <div class="ml-lg-5 pl-lg-5">
+                <table>
+                    <th>                                                        <!-- Jinja loop starts here -->
+                        <p>Noelle said (14 hours ago)</p>                       
+                    </th>
+                    <tbody>
+                        <tr>
+                            <td><p class="border border-dark rounded-pill p-4 text-center">Message goes here Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione. Amet eveniet tenetur, qui harum dolorum mollitia unde voluptatum itaque. Numquam eum aperiam eaque ducimus natus voluptates rem, voluptatibus magnam!</p></td>
+                            <td ><p class="text-top ml-4 mr-4 pr-3 pl-3 pb-2 pt-1 rounded-circle border border-dark btn btn-outline-danger">x</p></td>
+                        </tr>
+                    </tbody>                                                    <!-- Jinja loop ends here -->
+                </table>
+            </div>
+        </div>
+        <div class="col-4 pt-lg-5 pl-lg-5">
+            <div class="ml-lg-2">
+                <h2 class="border-bottom d-inline">Send Messages</h2>
+                <p class="text-success">you have 10 messages</p>
+            </div>
+            <table class="m-lg-2 table-hover">
+                <tbody class="p-lg-5 m-5 rounded-pill">
+                    <tr>                                                    <!-- Jinja loop starts here -->
+                        <form action="">
+                            <td class="pl-2">Name</td>
+                            <td><textarea class="p-4 rounded-pill m-lg-4 mr-lg-4 text-center text-decoration-none" name="" id="" cols="40" rows="2"></textarea></td>
+                            <td><input type="submit" value="^" class="btn btn-outline-primary mr-2 rounded-circle pr-3 pl-3"></td>
+                        </form>
+                    </tr>                                                   <!-- Jinja loop ends here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

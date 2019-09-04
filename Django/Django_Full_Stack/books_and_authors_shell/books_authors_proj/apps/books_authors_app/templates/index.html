@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid row">
+    <div class="col-5">
+        <h2 class="text-center mt-5 mb-5">Add a Book</h2>
+        <form action="/add_books" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <label for="title" class="h4 pl-4">Title</label>
+                <textarea name="title" cols="30" rows="1" placeholder="Title" class="ml-auto mr-5 mb-3 p-2"></textarea>
+            </div>
+            <div class="row">
+                <label for="description" class="h4 pl-4">Description</label>
+                <textarea name="description" cols="30" rows="10" placeholder="Write a description here :)"
+                    class="ml-auto mr-5 p-2"></textarea>
+                </div>
+                <input type="submit" value="Add" class="btn btn-primary mt-4 ml-auto mr-auto pl-5 pr-5 d-block">
+        </form>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <div class="col-7">
+        <table class="table m-5">
+            <thead class=>
+                <tr>
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for one_book in all_books %}
+                <tr>
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <td> {{ one_book.id }}</td>
+                    <td>{{ one_book.title }}</td>
+                    <td><a href="/book_desc/{{ one_book.id }}" class="btn btn-success">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    </div>
+</body>
+
+</html>

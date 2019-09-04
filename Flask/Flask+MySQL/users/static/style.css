@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    text-align:center;
+    /* background-color:lightblue; */
+    display:inline-block;
+    width: 100vw;
+    border-radius: 10px;
+}
+
+a {
+    position: relative;
+    left:1000px;
+    top:40px;
+    display:block;
+}
+
+body h1{
+    margin-top:20px;
+    display:block;
+    text-align:center;
+}
+
+#form_container {
+    margin:auto auto;
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    /* background-color:lightgreen; */
+}
+form label{
+    display:block;
+    padding:5px;
+}
+
+form input{
+    text-align:center;
+    width:25%;
+    height:3vw;
+    border-radius:5px;
+    margin: 5px auto;
+    display:block;
+}
+
+.reposition {
+    margin-top:5vw;
+}

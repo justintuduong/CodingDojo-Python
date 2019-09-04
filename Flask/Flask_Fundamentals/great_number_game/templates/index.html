@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        textarea {
+            display: block;
+            margin: auto auto;
+        }
+
+        /* .box {
+            width: 22vw;
+            height: 22vw;
+            margin: auto auto;
+            border: black solid 2px;
+        } */
+        form {
+            margin:10px;
+        }
+
+        form.button {
+            margin:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> The Great Number Game!</h1>
+
+    <h2> Choose a number between 1-100!</h2>
+    
+    {% for x in range(1) %}
+    <table class="box" style="background-color: {{ color }}; width: 22vw; height:22vw; margin: auto auto ">
+        <td>{{response}}</td>
+    </table>
+    {% endfor %}
+
+    <p> Take a guess!</p>
+
+    <form action="/guess" method='POST'>
+        <input type="text" name="number">
+        <br>
+        <button type="submit" name ="" value="submit">Submit</button>
+    </form>
+    <a href="http://localhost:5000/reset">
+        <button type="submit" name="" value="reset">New Game</button>    
+    </a>
+    <!-- <form action='/reset'>
+        <input type="submit" name="" value="reset">
+    </form> -->
+
+</body>
+
+</html>
+
+<!-- <div>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+
+  <div class=""><p>{{feedback}}</p></div> -->
+<!-- 
+    <p>Take a guess!</p>
+    <form action="/guess" method="POST">
+        <input name="guess" type=text></input>
+        <br>
+        <a href="http://localhost:5000/verify"><button name="guess">Submit</button></a>
+        <a href="http://localhost:5000/reset"><button name="reset">New Game</button></a>
+    </form> -->

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <p class="inline-block">Your Gold:</p>
+    <p class="inline-block gold border border-dark">{{ gold }}</p>
+    <div>
+        <div class="gold_action">
+            <h1>
+                Farm
+            </h1>
+            <h3>(earns 10 to 20 gold)</h3>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="farm" value="{{ farm }}"  />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+<!-- 
+            <form action="/process_money" method="POST">
+                <button class="btn btn-warning" name="farm" value="farm">Find Gold!</button>
+            </form> -->
+        </div>
+        <div class="gold_action">
+            <h1>
+                Cave
+            </h1>
+            <h3>(earns 5 to 10 gold)</h3>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="cave" value="{{ cave }}" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <!-- <form action="/process_money" method="POST">
+                <button class="btn btn-warning" name="cave" value="cave">Find Gold!</button>
+            </form> -->
+        </div>
+        <div class="gold_action">
+            <h1>
+                House
+            </h1>
+            <h3>(earns 2 to 5 gold)</h3>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="house" value="{{ house }}" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <!-- <form action="/process_money" method="POST">
+                <button class="btn btn-warning" name="house" value="house">Find Gold!</button>
+            </form> -->
+        </div>
+        <div class="gold_action">
+            <h1>
+                Casino
+            </h1>
+            <h3>(earns -50 to 50 gold)</h3>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="casino" value="{{ casino }}" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+            <!-- <form action="/process_money" method="POST">
+                <button class="btn btn-warning" name="casino" value="casino">Find Gold!</button>
+            </form> -->
+        </div>
+    </div>
+    <div>
+        <p>Activities:</p>
+        <textarea>dynamic statements go here</textarea>
+    </div>
+
+</body>
+
+</html>

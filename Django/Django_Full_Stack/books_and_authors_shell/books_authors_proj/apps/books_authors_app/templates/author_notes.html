@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Authors Name: {{ author.first_name }} {{ author.last_name }}</h1>
+    <h2>Id: {{ author.id }}</h2>
+    <div class="row">
+        <div class="col">
+            <h3 class="d-inline">Notes:</h3>
+        </div>
+        <div class="col">
+            <p>{{ author.note }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Books:</h3>
+        <ul>
+            {% for book in books_list.all %}
+            <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+        <form action="/add_book_to_author" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+
+                <input type="text" name="author_id" value="{{ author.id }}">
+                
+                <select class="custom-select" name="book_id" aria-label="Example select with button addon">
+
+                    <option selected>Choose...</option>
+
+                    {% for one_book in all_books  %}
+
+                    <option value ="{{ one_book.id }}">{{ one_book.title }}</option>
+
+                    {% endfor %}
+
+                </select>
+
+                <div class="input-group-append">
+
+                <button class="btn btn-outline-secondary" type="submit">Add Book</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+

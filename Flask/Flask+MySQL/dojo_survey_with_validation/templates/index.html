@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action='http://localhost:5000/process' method="POST">
+            <div class="form-group">
+                {% with messages = get_flashed_messages(category_filter=['name']) %}
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <label for="name">Your Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="location">Dojo Location</label>
+                <select class="form-control" name="location">
+                    <option>San Jose</option>
+                    <option>Berkeley</option>
+                    <option>Seattle</option>
+                </select>
+            </div>
+            <div>
+                <label for="language">Favorite Language</label>
+                <select class="form-control" name="language">
+                    <option placeholder="language"></option>
+                    <option value="python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="MEAN">MEAN</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment (optional):</label>
+                <textarea class="form-control" name="comment" rows="3"></textarea>
+            </div>
+            <a href="http://localhost:5000/process">
+                <button class="btn btn-primary" type="submit" value="result">Button</button>
+            </a>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+Django==1.11.9
+pytz==2019.1
+
+
+pip install Django==1.11.9
+
+Installs Django in the environment.
+
+pip list
+
+Shows all installed packages.
+
+deactivate (This will deactivate your virtual environment)
+
+Deactivates the current environment.
+
+pip3 list (How is the result different from when you ran pip list with the virtualenv activated? Hint, you should not have as many things listed when the virtualenv is deactivated. If your results are the same, go back and figure out what went wrong.)
+
+
+pip install Django==1.11.9 (We know you already ran this one. What information do you see returned in terminal after this command?)
+
+Shows that the installation has already been satisfied.
+
+pip freeze (What's the difference between freeze and list?)
+Displays a list of installed packages in required formats.
+
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+
+Created a requirements.txt file with the installation names and versions.
+
+pip uninstall Django
+Uninstalled Django.
+
+pip show Django
+
+Django was uninstalled, therefore nothing was shown.
+
+pip search Flask This one might take a moment to execute.
+displayed all flask packages involved with flask.

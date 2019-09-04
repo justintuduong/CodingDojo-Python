@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="p-5 border border-dark rounded-lg container-fluid">
+        <h1 class="d-inline text-primary">Welcome, {{ user.first_name }}</h1>
+        <div class="float-right pt-2">
+            <a href="/user/logout" class="btn btn-outline-primary d-inline float-right">Logout</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <!-- left side of html -->
+            <h2 class="text-center mt-5 mb-5">Add a Book</h2>
+            <form action="/user/books/add" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="title" class="h4 pl-4">Title</label>
+                    <textarea name="title" cols="40" rows="1" placeholder="Title"
+                        class="ml-auto mr-5 mb-3 p-2"></textarea>
+                </div>
+                <div class="row">
+                    <label for="description" class="h4 pl-4">Description</label>
+                    <textarea name="description" cols="40" rows="10" placeholder="Write a description here :)"
+                        class="ml-auto mr-5 p-2"></textarea>
+                </div>
+                <input type="submit" value="Add" class="btn btn-primary mt-4 ml-auto mr-auto pl-5 pr-5 d-block">
+            </form>
+        </div>
+        <div class="col">
+            <!-- right side of html -->
+            <h1></h1>
+        </div>
+
+    </div>
+</body>
+
+</html>

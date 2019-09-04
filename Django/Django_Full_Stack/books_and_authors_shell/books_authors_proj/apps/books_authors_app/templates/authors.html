@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid row">
+    <div class="col-5">
+        <h2 class="text-center mt-5 mb-5">Add an Author</h2>
+        <form action="/add_new_author" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <label for="first_name" class="h4 pl-4">First Name</label>
+                <textarea name="first_name" cols="30" rows="1" placeholder="First Name" class="ml-auto mr-5 mb-3 p-2"></textarea>
+            </div>
+            <div class="row">
+                    <label for="last_name" class="h4 pl-4">Last Name</label>
+                    <textarea name="last_name" cols="30" rows="1" placeholder="Last Name" class="ml-auto mr-5 mb-3 p-2"></textarea>
+                </div>
+            <div class="row">
+                <label for="notes" class="h4 pl-4">Notes</label>
+                <textarea name="notes" cols="30" rows="10" placeholder="Write notes here :)"
+                    class="ml-auto mr-5 p-2"></textarea>
+                </div>
+                <input type="submit" value="Add" class="btn btn-primary mt-4 ml-auto mr-auto pl-5 pr-5 d-block">
+        </form>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <div class="col-7">
+        <table class="table m-5">
+            <thead class=>
+                <tr>
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for one_author in all_authors %}
+                <tr>
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <th scope="col"></th> <!-- using as a spacer -->
+                    <td> {{ one_author.id }}</td>
+                    <td>{{ one_author.first_name }} {{ one_author.last_name }}</td>
+                    <td><a href="/author_notes/{{ one_author.id }}" class="btn btn-success">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    </div>
+</body>
+
+</html>
